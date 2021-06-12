@@ -24,7 +24,7 @@ for s in smiles:
     job.write_pbs(output_dir=s)
 ```
 <p align="center">
-    <img src='./tutorial/img/temp_vs_density.png' />
+    <img src='./tutorial/img/temp_vs_density.png' width="25%"/>
 </p>
 
 ## Installation
