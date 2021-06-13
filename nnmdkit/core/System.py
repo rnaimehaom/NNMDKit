@@ -5,6 +5,23 @@ from rdkit.Chem import Descriptors, MolFromSmiles
 from subprocess import call
 
 class System:
+    '''nnmdkit.core.System.System
+
+    Template object to contain class initialization settings
+
+    Attributes:
+        smiles: str
+            SMILES string of the polymer (use * as connecting point)
+
+        mw: int
+            Molecular weight of the polymer
+
+        ntotal: int
+            Total number of atoms of the system
+
+        density: float
+            Density of the system
+    '''
     def __init__(self, smiles, mw, ntotal, density):
         self.smiles = smiles
         self.mw = mw

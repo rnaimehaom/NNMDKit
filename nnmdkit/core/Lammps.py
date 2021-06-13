@@ -2,6 +2,41 @@ import os
 from nnmdkit.util import Util
 
 class Lammps:
+    '''nnmdkit.core.Lammps.Lammps
+
+    Template object to contain LAMMPS initialization settings
+
+    Attributes:
+        data_fname: str
+            File name of the data file, which will be read in by read_data command
+
+        NN_POTENTIAL: str
+            Neural network potential file name
+
+        atom_style: str
+            LAMMPS aomt_style to use during simulation; default=full
+
+        units: str
+            LAMMPS units to use during simulation; default=real
+
+        timestep: float
+            LAMMPS timestep to use during simulation; default=1 fs
+
+        neighbor_skin: float
+            LAMMPS neighbor skin size to use during simulation; default=2 Angstrom
+
+        neighbor_every: int
+            LAMMPS neighbor list checking frequency to use during simulation; default=1 fs
+
+        thermo: int
+            LAMMPS thermo to use during simulation; default=1000 timestep
+
+        pair_style: str
+            LAMMPS pair_style to use during simulation; default=nn
+
+        element: str
+            Element order of the pair_style; default=C H
+    '''
     def __init__(self, data_fname, NN_POTENTIAL, 
                  atom_style='full', units='real', timestep=1, 
                  neighbor_skin=2.0, neighbor_every=1, thermo=1000,

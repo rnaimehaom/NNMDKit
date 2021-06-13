@@ -1,6 +1,29 @@
 from nnmdkit.util import Util
 
 class Job:
+    '''nnmdkit.core.Job.Job
+
+    Template object to contain job initialization settings
+
+    Attributes:
+        jobname: str
+            Job name
+
+        project: str
+            Project name
+
+        nodes: int
+            Number of nodes
+
+        ppn: int
+            Number of processors
+
+        walltime: str
+            Job walltime
+
+        LAMMPS_EXEC: str
+            Directory of the LAMMPS executable file
+    '''
     def __init__(self, jobname, project, nodes, ppn, walltime, LAMMPS_EXEC):
         self.jobname = jobname
         self.project = project
