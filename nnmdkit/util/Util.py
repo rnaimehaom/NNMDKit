@@ -1,3 +1,5 @@
+import os
+
 def build_dir(output_dir):
     try:
         os.mkdir(output_dir)

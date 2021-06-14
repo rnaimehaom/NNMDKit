@@ -1,4 +1,3 @@
-import os
 from nnmdkit.util import Util
 
 class Lammps:
@@ -23,7 +22,7 @@ class Lammps:
             LAMMPS timestep to use during simulation; default=1 fs
 
         neighbor_skin: float
-            LAMMPS neighbor skin size to use during simulation; default=2 Angstrom
+            LAMMPS neighbor skin size to use during simulation; default=2.0 Angstrom
 
         neighbor_every: int
             LAMMPS neighbor list checking frequency to use during simulation; default=1 fs

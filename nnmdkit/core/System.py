@@ -28,7 +28,8 @@ class System:
         self.ntotal = ntotal
         self.density = density
 
-    def write_data(self, output_dir, output_prefix='system', tmp_ff='opls-aa', terminator='*[H]', cleanup=True):
+    def write_data(self, output_dir, output_prefix='system', 
+                   tmp_ff='opls-aa', terminator='*[H]', cleanup=True):
 
         Util.build_dir(output_dir)
         
@@ -130,7 +131,8 @@ class System:
             for line in atomlines:
                 fields = line.split()
                 new_atomtype = typeconvertdict[fields[2]]
-                out.write('{0:>8} {1:>7} {atomtype:>3} {charge:>7} {4:>14} {5:>14} {6:>14}\n'.format(*fields, atomtype=new_atomtype, charge=0))
+                out.write('{0:>8} {1:>7} {atomtype:>3} {charge:>7} {4:>14} {5:>14} {6:>14}\n'
+                          .format(*fields, atomtype=new_atomtype, charge=0))
 
         # Clean up all EMC generated files except for the data file
         if cleanup:
