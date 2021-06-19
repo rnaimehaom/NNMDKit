@@ -1,5 +1,6 @@
 from nnmdkit.util import Util
 
+
 class Job:
     '''nnmdkit.core.Job.Job
 
@@ -45,5 +46,5 @@ class Job:
             f.write('#PBS -o out.$PBS_JOBID\n')
             f.write('\n')
             f.write('cd $PBS_O_WORKDIR\n')
-            f.write('mpirun -np {} {} -in lmp.in\n'
-                    .format(int(self.nodes*self.ppn), self.LAMMPS_EXEC))
+            f.write('mpirun -np {} {} -in lmp.in\n'.format(
+                int(self.nodes * self.ppn), self.LAMMPS_EXEC))
