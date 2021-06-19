@@ -41,11 +41,11 @@ class Lammps:
                  data_fname,
                  NN_POTENTIAL,
                  atom_style='full',
-                 units='real',
-                 timestep=1,
+                 units='metal',
+                 timestep=0.001,
                  neighbor_skin=2.0,
                  neighbor_every=1,
-                 thermo=1000,
+                 thermo=100,
                  pair_style='nn',
                  element='C H'):
         self.data_fname = data_fname
