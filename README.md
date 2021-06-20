@@ -27,7 +27,7 @@ for s in smiles:
     <img src='./tutorial/img/temp_vs_density.png' width="70%"/>
 </p>
 
-A tutorial on using NNMDKit to create simulations of hydrocarbon polymers can be found [here](https://github.com/Ramprasad-Group/NNMDKit/tree/master/tutorial/CaseStudies.Hydrobarbons.ipynb)
+A tutorial on using NNMDKit to create simulations of hydrocarbon polymers can be found [here](https://github.com/Ramprasad-Group/NNMDKit/tree/master/tutorial/CaseStudies.Hydrobarbons.ipynb).
 
 ## Installation
 
