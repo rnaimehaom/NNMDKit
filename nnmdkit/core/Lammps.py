@@ -82,7 +82,7 @@ class Lammps:
                 'Tmax': 1000,
                 'Pmax': 50000,
                 'Tdamp': '$(100.0*dt)',
-                'Pdamp': '$(1000.0*dt)',
+                'Pdamp': '$(100.0*dt)',
                 'eq_totaltime': 0
             }
             Util.register_kwargs(self.eq_kwargs, kwargs)
@@ -130,7 +130,7 @@ class Lammps:
                 'step': 1000000,
                 'pressure': 1,
                 'Tdamp': '$(100.0*dt)',
-                'Pdamp': '$(1000.0*dt)'
+                'Pdamp': '$(100.0*dt)'
             }
             Util.register_kwargs(self.Tg_kwargs, kwargs)
 
