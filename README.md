@@ -1,4 +1,5 @@
 # Neural Network Molecular Dynamics Kit
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 NNMDKit generates polymer topology from SMILES strings and automatically builds LAMMPS data and input files for molecular dynamics simulations
 
@@ -10,7 +11,7 @@ import nnmdkit
 smiles = ['*CC*', '*CC(*)C', '*CC(*)CC', '*CC(*)CCC', '*CC(*)CCCC','*CC(*)c1ccccc1']
 
 for s in smiles:
-    sys = nnmdkit.System(smiles=s, mw=10000, ntotal=3000, density=0.5)
+    sys = nnmdkit.System(smiles=s, mw=10000, ntotal=3000, density=0.5, builtby='emc')
     data = sys.write_data(output_dir=s)
 
     lmp = nnmdkit.Lammps(data, NN_POTENTIAL='~/p-rramprasad3-0/NNLMP/potential_saved')
@@ -36,13 +37,10 @@ pip install .
 ```
 
 ### Requirements
-* [EMC](http://montecarlo.sourceforge.net/emc/Welcome.html)
+* [EMC](http://montecarlo.sourceforge.net/emc/Welcome.html) or [PSP](https://github.com/Ramprasad-Group/PSP)
 * [RDKit](https://www.rdkit.org/)
 
-Note that, both [EMC](http://montecarlo.sourceforge.net/emc/Welcome.html) and [RDKit](https://www.rdkit.org/) are required to be installed manually.
-NNMDKit requires EMC to create polymer structures. To configure the integration with EMC, two environment variables are required to be addded to locate 
-your EMC executable (`emc_linux64` for Linux, `emc_macos` for MacOS, or `emc_win32` for Windows) and setup tool (`emc_setup.pl`). Add the paths of the 
-EMC executable and setup tool as environment variables "EMC_EXEC" and "EMC_SETUP", respectively.
+Note that, both [EMC](http://montecarlo.sourceforge.net/emc/Welcome.html)/[PSP](https://github.com/Ramprasad-Group/PSP) and [RDKit](https://www.rdkit.org/) are required to be installed manually. NNMDKit requires EMC or PSP to create polymer structures. To configure the integration with EMC, two environment variables are required to be addded to locate your EMC executable (`emc_linux64` for Linux, `emc_macos` for MacOS, or `emc_win32` for Windows) and setup tool (`emc_setup.pl`). Add the paths of the EMC executable and setup tool as environment variables "EMC_EXEC" and "EMC_SETUP", respectively.
 
 For Ramprasad Group users on Tyrion2, simply type in the command line:
 
@@ -51,7 +49,5 @@ echo "export EMC_EXEC=/data/kevin/EMC/bin/emc_linux64" >> ~/.bashrc
 echo "export EMC_SETUP=/data/kevin/EMC/scripts/emc_setup.pl" >> ~/.bashrc
 ```
 
-## License & copyright
+## Copyright
 Ramprasad Group, Georgia Tech, USA
-
-Licensed under the [MIT License](LICENSE). 
