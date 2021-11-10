@@ -37,6 +37,7 @@ class Lammps:
         element: str
             Element order of the pair_style; default=C H
     '''
+
     def __init__(self,
                  data_fname,
                  NN_POTENTIAL,
@@ -88,7 +89,8 @@ class Lammps:
             Util.register_kwargs(self.eq_kwargs, kwargs)
 
             # If equilibration steps are not defined, apply the default 21-step amorphous polymer equilibration process
-            # Ref: Abbott, Hart, and Colina, Theoretical Chemistry Accounts, 132(3), 1-19, 2013.
+            # Ref: Abbott, Hart, and Colina, Theoretical Chemistry Accounts,
+            # 132(3), 1-19, 2013.
             if self.eq_kwargs['eq_step'] == []:
                 Tmax = self.eq_kwargs['Tmax']
                 Tfinal = self.eq_kwargs['Tfinal']
@@ -165,7 +167,7 @@ class Lammps:
 
             f.write('### Initialization\n')
             f.write('{:<15} full\n'.format('atom_style'))
-            f.write('{:<15} real\n'.format('units'))
+            f.write('{:<15} {}\n'.format('units', self.units))
             f.write('{:<15} {}\n'.format('read_data', self.data_fname))
             f.write('{:<15} {}\n'.format('include', settings_fname))
             f.write('\n')
