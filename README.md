@@ -1,5 +1,5 @@
 # Neural Network Molecular Dynamics Kit
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT) [![Downloads](https://pepy.tech/badge/nnmdkit)](https://pepy.tech/project/nnmdkit)
 
 NNMDKit generates polymer topology from SMILES strings and automatically builds LAMMPS data and input files for molecular dynamics simulations
 
@@ -11,7 +11,7 @@ import nnmdkit
 smiles = ['*CC*', '*CC(*)C', '*CC(*)CC', '*CC(*)CCC', '*CC(*)CCCC','*CC(*)c1ccccc1']
 
 for s in smiles:
-    sys = nnmdkit.System(smiles=s, mw=10000, ntotal=3000, density=0.5, builtby='emc')
+    sys = nnmdkit.System(smiles=s, mw=10000, ntotal=3000, density=0.5)
     data = sys.write_data(output_dir=s)
 
     lmp = nnmdkit.Lammps(data, NN_POTENTIAL='~/p-rramprasad3-0/NNLMP/potential_saved')
